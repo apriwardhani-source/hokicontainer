@@ -92,6 +92,8 @@ function getMenuItemsPaginated($categoryId = 'all', $search = '', $page = 1, $li
         $params[] = "%$search%";
     }
 
+    $limit = (int)$limit;
+    $offset = (int)$offset;
     $sql .= " ORDER BY c.sort_order, m.name LIMIT $limit OFFSET $offset";
 
     $stmt = $pdo->prepare($sql);
@@ -171,7 +173,9 @@ function getTopSellingItems($limit = 5, $days = 7) {
         ORDER BY total_qty DESC
         LIMIT ?
     ");
-    $stmt->execute([$days, $limit]);
+    $stmt->bindValue(1, (int)$days, PDO::PARAM_INT);
+    $stmt->bindValue(2, (int)$limit, PDO::PARAM_INT);
+    $stmt->execute();
     return $stmt->fetchAll();
 }
 

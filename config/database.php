@@ -1,8 +1,5 @@
 <?php
-// Session start - HARUS di paling atas sebelum output apapun
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+// Database Configuration
 
 // Database Configuration
 // Database Configuration
@@ -17,9 +14,10 @@ if (getenv('DB_HOST')) {
     define('DB_USER', getenv('DB_USER'));
     define('DB_PASS', getenv('DB_PASS'));
     define('DB_PORT', getenv('DB_PORT') ?: 3306);
-    define('DB_SSL', getenv('DB_SSL') === 'true'); 
+    define('DB_SSL', true); 
     
-    $protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ? 'https' : 'http';
+    // Vercel sits behind a proxy, check X-Forwarded-Proto
+    $protocol = (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') ? 'https' : 'http';
     define('APP_URL', $protocol . '://' . ($_SERVER['HTTP_HOST'] ?? ''));
 } 
 elseif ($isLocal) {
@@ -57,6 +55,17 @@ try {
     }
 
     $pdo = new PDO($dsn, DB_USER, defined('DB_PASS') ? DB_PASS : '', $options);
+
+    // SETUP DATABASE SESSION HANDLER (Critical for Vercel Serverless)
+    if (getenv('DB_HOST')) {
+        require_once __DIR__ . '/../includes/session_handler.php';
+        $handler = new DBSessionHandler($pdo);
+        session_set_save_handler($handler, true);
+    }
+
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
 } catch (PDOException $e) {
     die("Connection failed: " . $e->getMessage());
 }

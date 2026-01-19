@@ -1,7 +1,3 @@
--- Hapus menu lama (opsional, uncomment jika ingin reset)
--- DELETE FROM menu_items;
-
--- ==================== ES ====================
 INSERT INTO menu_items (category_id, name, price, is_available) VALUES
 ((SELECT id FROM categories WHERE name = 'Es'), 'Es Teler', 10000, 1),
 ((SELECT id FROM categories WHERE name = 'Es'), 'Es Teler Durian', 15000, 1),
@@ -9,13 +5,11 @@ INSERT INTO menu_items (category_id, name, price, is_available) VALUES
 ((SELECT id FROM categories WHERE name = 'Es'), 'Alpukat Kocok', 10000, 1),
 ((SELECT id FROM categories WHERE name = 'Es'), 'Milo', 10000, 1);
 
--- ==================== BOBA ====================
 INSERT INTO menu_items (category_id, name, price, is_available) VALUES
 ((SELECT id FROM categories WHERE name = 'Boba'), 'Boba Coklat', 10000, 1),
 ((SELECT id FROM categories WHERE name = 'Boba'), 'Boba Capucino', 10000, 1),
 ((SELECT id FROM categories WHERE name = 'Boba'), 'Boba Green Tea', 10000, 1);
 
--- ==================== NUTRISARI ====================
 INSERT INTO menu_items (category_id, name, price, is_available) VALUES
 ((SELECT id FROM categories WHERE name = 'Nutrisari'), 'Nutrisari Mangga', 5000, 1),
 ((SELECT id FROM categories WHERE name = 'Nutrisari'), 'Nutrisari Anggur', 5000, 1),
@@ -25,7 +19,6 @@ INSERT INTO menu_items (category_id, name, price, is_available) VALUES
 ((SELECT id FROM categories WHERE name = 'Nutrisari'), 'Nutrisari Jeruk Nipis', 5000, 1),
 ((SELECT id FROM categories WHERE name = 'Nutrisari'), 'Nutrisari Leci', 5000, 1);
 
--- ==================== MARJAN SQUASH ====================
 INSERT INTO menu_items (category_id, name, price, is_available) VALUES
 ((SELECT id FROM categories WHERE name = 'Marjan Squash'), 'Marjan Melon', 5000, 1),
 ((SELECT id FROM categories WHERE name = 'Marjan Squash'), 'Marjan Jeruk', 5000, 1),
@@ -35,7 +28,6 @@ INSERT INTO menu_items (category_id, name, price, is_available) VALUES
 ((SELECT id FROM categories WHERE name = 'Marjan Squash'), 'Marjan Strawberry', 5000, 1),
 ((SELECT id FROM categories WHERE name = 'Marjan Squash'), 'Marjan Vanila', 5000, 1);
 
--- ==================== MOJITO ====================
 INSERT INTO menu_items (category_id, name, price, is_available) VALUES
 ((SELECT id FROM categories WHERE name = 'Mojito'), 'Mojito Melon', 5000, 1),
 ((SELECT id FROM categories WHERE name = 'Mojito'), 'Mojito Jeruk', 5000, 1),
@@ -45,20 +37,17 @@ INSERT INTO menu_items (category_id, name, price, is_available) VALUES
 ((SELECT id FROM categories WHERE name = 'Mojito'), 'Mojito Strawberry', 5000, 1),
 ((SELECT id FROM categories WHERE name = 'Mojito'), 'Mojito Vanila', 5000, 1);
 
--- ==================== TEH ====================
 INSERT INTO menu_items (category_id, name, price, is_available) VALUES
 ((SELECT id FROM categories WHERE name = 'Teh'), 'Es Teh Jumbo', 5000, 1),
 ((SELECT id FROM categories WHERE name = 'Teh'), 'Lemon Tea', 8000, 1),
 ((SELECT id FROM categories WHERE name = 'Teh'), 'Leci Tea', 8000, 1),
 ((SELECT id FROM categories WHERE name = 'Teh'), 'Milk Tea', 8000, 1);
 
--- ==================== KOPI ====================
 INSERT INTO menu_items (category_id, name, price, is_available) VALUES
 ((SELECT id FROM categories WHERE name = 'Kopi'), 'Americano', 5000, 1),
 ((SELECT id FROM categories WHERE name = 'Kopi'), 'Kopi Vanila', 10000, 1),
 ((SELECT id FROM categories WHERE name = 'Kopi'), 'Dalgona Kopi', 10000, 1);
 
--- ==================== SODA GEMBIRA ====================
 INSERT INTO menu_items (category_id, name, price, is_available) VALUES
 ((SELECT id FROM categories WHERE name = 'Soda Gembira'), 'Soda Melon', 7000, 1),
 ((SELECT id FROM categories WHERE name = 'Soda Gembira'), 'Soda Jeruk', 7000, 1),
@@ -67,7 +56,6 @@ INSERT INTO menu_items (category_id, name, price, is_available) VALUES
 ((SELECT id FROM categories WHERE name = 'Soda Gembira'), 'Soda Markisa', 7000, 1),
 ((SELECT id FROM categories WHERE name = 'Soda Gembira'), 'Soda Vanila', 7000, 1);
 
--- ==================== CEMILAN ====================
 INSERT INTO menu_items (category_id, name, price, is_available) VALUES
 ((SELECT id FROM categories WHERE name = 'Cemilan'), 'Oseng Sosis Mix', 15000, 1),
 ((SELECT id FROM categories WHERE name = 'Cemilan'), 'Hotdog', 15000, 1),
@@ -90,7 +78,6 @@ INSERT INTO menu_items (category_id, name, price, is_available) VALUES
 ((SELECT id FROM categories WHERE name = 'Cemilan'), 'Sempol', 10000, 1),
 ((SELECT id FROM categories WHERE name = 'Cemilan'), 'Roti Panggang', 10000, 1);
 
--- ==================== DIMSUM ====================
 INSERT INTO menu_items (category_id, name, price, is_available) VALUES
 ((SELECT id FROM categories WHERE name = 'Dimsum'), 'Dimsum Original Isi 4', 12000, 1),
 ((SELECT id FROM categories WHERE name = 'Dimsum'), 'Dimsum Original Isi 6', 15000, 1),

@@ -6,11 +6,7 @@ ini_set('display_errors', 1);
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../includes/functions.php';
 
-echo "<!-- DEBUG: Database and Functions loaded -->";
-
 requireLogin();
-
-echo "<!-- DEBUG: Login verified -->";
 
 try {
     $user = getUser();
@@ -26,8 +22,6 @@ try {
 } catch (Error $e) {
     die("PHP ERROR: " . $e->getMessage() . " on line " . $e->getLine());
 }
-
-echo "<!-- DEBUG: All data fetched -->";
 ?>
 <!DOCTYPE html>
 <html lang="id">

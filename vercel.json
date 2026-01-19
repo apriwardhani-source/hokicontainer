@@ -1,12 +1,54 @@
 {
-    "functions": {
-        "admin/*.php": {
-            "runtime": "vercel-php@0.7.0"
+    "builds": [
+        {
+            "src": "index.php",
+            "use": "vercel-php@0.7.0"
         },
-        "*.php": {
-            "runtime": "vercel-php@0.7.0"
+        {
+            "src": "admin/dashboard.php",
+            "use": "vercel-php@0.7.0"
+        },
+        {
+            "src": "admin/login.php",
+            "use": "vercel-php@0.7.0"
+        },
+        {
+            "src": "admin/kasir.php",
+            "use": "vercel-php@0.7.0"
+        },
+        {
+            "src": "admin/menu.php",
+            "use": "vercel-php@0.7.0"
+        },
+        {
+            "src": "admin/stok.php",
+            "use": "vercel-php@0.7.0"
+        },
+        {
+            "src": "admin/laporan.php",
+            "use": "vercel-php@0.7.0"
+        },
+        {
+            "src": "admin/riwayat.php",
+            "use": "vercel-php@0.7.0"
+        },
+        {
+            "src": "admin/settings.php",
+            "use": "vercel-php@0.7.0"
+        },
+        {
+            "src": "admin/logout.php",
+            "use": "vercel-php@0.7.0"
+        },
+        {
+            "src": "assets/**",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "uploads/**",
+            "use": "@vercel/static"
         }
-    },
+    ],
     "routes": [
         {
             "src": "/assets/(.*)",

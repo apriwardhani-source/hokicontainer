@@ -52,6 +52,7 @@ try {
     ];
 
     if (defined('DB_SSL') && DB_SSL) {
+        $options[PDO::MYSQL_ATTR_SSL_CA] = true;
         $options[PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT] = false;
     }
 

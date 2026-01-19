@@ -1,0 +1,4 @@
+# Hapus paksa https dulu biar gak nyasar ke IM3
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

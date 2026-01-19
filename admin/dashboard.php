@@ -33,7 +33,7 @@ echo "<!-- DEBUG: All data fetched -->";
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <?php include '../includes/header_meta.php'; ?>
+    <?php include __DIR__ . '/../includes/header_meta.php'; ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Hoki Admin - Ultra Luxury Dashboard</title>
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
